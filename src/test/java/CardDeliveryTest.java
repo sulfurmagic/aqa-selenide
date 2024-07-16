@@ -16,14 +16,14 @@ class CardDeliveryTest {
     }
 
     @Test
-    void ShouldSucceed() {
-        Selenide.open("http://0.0.0.0:9999");
+    void shouldSucceed() {
+        Selenide.open("http://localhost:9999");
         $("[data-test-id=city] input").setValue("Санкт-Петербург");
         $("[data-test-id=date] input").doubleClick();
         $("[data-test-id=date] input").sendKeys(BACK_SPACE);
         String date = setDate(3, "dd.MM.yyyy");
         $("[data-test-id=date] input").setValue(date);
-        $("[data-test-id=name] input").setValue("Бла бла Бла бла");
+        $("[data-test-id=name] input").setValue("Иван Петров");
         $("[data-test-id=phone] input").setValue("+70000000000");
         $("[data-test-id=agreement]").click();
         $(".button").click();
